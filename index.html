@@ -97,10 +97,26 @@
       filter: brightness(1.1);
     }
 
-    .art-card .caption {
+    .caption {
       padding: 15px;
       font-size: 0.9rem;
       color: #ccc;
+    }
+
+    .stats {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .like-btn {
+      background: none;
+      border: none;
+      color: #ff4d4d;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     footer {
@@ -145,37 +161,93 @@
   <section id="gallery">
     <h2 style="margin-bottom: 15px;">🖼️ Галерея</h2>
     <div class="gallery">
+
+      <!-- Первый арт -->
       <div class="art-card">
-        <img src="images/art1.jpg" alt="Car Art 1">
-        <div class="caption">Тюнингованная полицейская машина</div>
+        <img src="https://www.google.com/search?client=ms-android-xiaomi-terr1-rso2&sca_esv=9cef7b5eea840559&sxsrf=AHTn8zp5ZxbGyAyW5yT_wuH2BVSb7LwdIw:1747729548971&udm=2&fbs=ABzOT_D2k6MNEmHCczqZM6bKks6biupaev7Xpf4sY8XasWpgYWN9jn0BhHbAtInNQ5RrU89TEPXSXJtttNtG7GnnNbJms_H5gidD-USH8g6JXLbEzsJbQLo3DZvE1TEmUreRZSZdFEQzIfWmaBGCkG1-6nep4j-MdPcaNFPhzHpMi8OZ1ZcAbw2SYoKW0x88HfdIqi7xzKXMuwzVbqUGE9F5j7FtfbvtYMvjLGUffulNPsYezq6tZdKnXMDdCvbeJfdDBsHneWd7jTnSzGAhmpoateGQf_pmmA&q=%D1%84%D0%BE%D1%82%D0%BA%D0%B8+%D0%BF%D0%BE%D0%BB%D0%B8%D1%86%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D1%85+%D0%BC%D0%B0%D1%88%D0%B8%D0%BD+%D1%84%D0%BE%D1%80%D0%B7%D0%B0+5&sa=X&ved=2ahUKEwiwgrj3z7GNAxXcIRAIHSZWHVkQtKgLegQIERAB&biw=392&bih=1092&dpr=2.75#sv=CAMSrAUahAUKtQIKuQEStgEKd0FBLUtUaGZsV3hMS2VGQThIZk1IR1M0WlN3RG1SODhyZEFPQzhVUW1ta1lmdUY0bjZZOWh0TEdkS09vTkNtYXBvOEVyZ1dLTzZZLXl3SF9QS3h4LVV2TWV3QTFOQllLbFhZdG9KRkpIQTZNcXNsVjE2aDgwWi1NEhdqandzYUppdlBNLXJ3UEFQOV9LLTJBRRoiQUNEWEw0bndvWUdVUURhUmRUcjI3a050dE1sSWF2c3BOdxIDODQ5GgEzIj4KAXESOdGE0L7RgtC60Lgg0L_QvtC70LjRhtC10LnRgdC60LjRhSDQvNCw0YjQuNC9INGE0L7RgNC30LAgNSIHCgN0YnMSACImCgRlcWxkEh5DZ0lJQUJBQU9nUUlBUkFBVlZkZU16OXRtRUJ2UGcStgIKzwESzAEKjAFBQS1LVGhmMzZBTkZjV1cyU2xxMExxTkg0Tk42T29iNkItVnJmY0x6T1VsbVRwR1pIcEN4cmVrdmV3d1NSNXVqcUhxSHk3R04xOThoQWd6d0Fnb3BnamRwekdXNlNESkZLLWo1UFh3M1VSbjA4LVhDOFNOSkxodnc1Y3RTSDUxeWVhQjdvS0RlLTNqMhIXamp3c2FKaXZQTS1yd1BBUDlfSy0yQUUaIkFDRFhMNGswd25YaVp2Qkt3S2JHU1VMRldOdExtSElySVESBDQ2OTgaATMiGAoGaW1nZGlpEg5hWjhuS3lta2ZEMGFMTSIXCgVkb2NpZBIOelFFanhDVVlBUlhMeU0iJgoEZXFsZBIeQ2dJSUFCQUFPZ1FJQVJBQVZWZGVNejl0bUVCdlBnGhFzdl9hWjhuS3lta2ZEMGFMTSAEKh8KBm1vc2FpYxITZS1zdl9hWjhuS3lta2ZEMGFMTRgAMAEYByDcmYWdCTABQAI" alt="Тюнингованная полицейская машина">
+        <div class="caption">
+          <h3>🚗 Тюнингованная полицейская машина</h3>
+          <p>Этот арт был создан на основе классической полицейской машины Roblox с добавлением неоновой подсветки, спойлеров и новых дисков.</p>
+          <a href="https://www.roblox.com/ " target="_blank" style="color: #00ffff; text-decoration: none; font-weight: bold;">Смотреть оригинал</a>
+          <div class="stats" id="art1-stats">
+            <button class="like-btn" onclick="likeArt('art1')">❤️ Нравится (<span id="art1-likes">0</span>)</button>
+            <span>Просмотры: <span id="art1-views">0</span></span>
+          </div>
+        </div>
       </div>
+
+      <!-- Второй арт -->
       <div class="art-card">
         <img src="images/art2.jpg" alt="Car Art 2">
         <div class="caption">Ретро-кабриолет с неоновой подсветкой</div>
+        <div class="stats" id="art2-stats">
+          <button class="like-btn" onclick="likeArt('art2')">❤️ Нравится (<span id="art2-likes">0</span>)</button>
+          <span>Просмотры: <span id="art2-views">0</span></span>
+        </div>
       </div>
+
+      <!-- Третий арт -->
       <div class="art-card">
         <img src="images/art3.jpg" alt="Car Art 3">
         <div class="caption">Дрифтующий автомобиль на закате</div>
+        <div class="stats" id="art3-stats">
+          <button class="like-btn" onclick="likeArt('art3')">❤️ Нравится (<span id="art3-likes">0</span>)</button>
+          <span>Просмотры: <span id="art3-views">0</span></span>
+        </div>
       </div>
+
+      <!-- Четвёртый арт -->
       <div class="art-card">
         <img src="images/art4.jpg" alt="Car Art 4">
         <div class="caption">Мини-кар с уникальным дизайном</div>
+        <div class="stats" id="art4-stats">
+          <button class="like-btn" onclick="likeArt('art4')">❤️ Нравится (<span id="art4-likes">0</span>)</button>
+          <span>Просмотры: <span id="art4-views">0</span></span>
+        </div>
       </div>
+
     </div>
   </section>
 
-  
   <section id="contact">
     <h2 style="margin-bottom: 15px;">📩 Контакты</h2>
     <p>Telegram: <a href="https://t.me/ANDREY33224 ">@ANDREY33224</a></p>
     
-
 </div>
 
 <footer>
   <p>© 2025 Roblox Car Art. Все права защищены.</p>
   <p><a href="#">Политика конфиденциальности</a></p>
 </footer>
+
+<script>
+  // Функция для увеличения лайков
+  function likeArt(id) {
+    let likes = parseInt(localStorage.getItem(`${id}-likes`) || 0;
+    likes++;
+    localStorage.setItem(`${id}-likes`, likes);
+    document.getElementById(`${id}-likes`).innerText = likes;
+  }
+
+  // Функция для подсчёта просмотров
+  function viewArt(id) {
+    let views = parseInt(localStorage.getItem(`${id}-views`) || 0;
+    views++;
+    localStorage.setItem(`${id}-views`, views);
+    document.getElementById(`${id}-views`).innerText = views;
+  }
+
+  // Запускаем подсчёт просмотров при загрузке страницы
+  window.onload = function () {
+    const artIds = ['art1', 'art2', 'art3', 'art4'];
+    artIds.forEach(id => {
+      const count = parseInt(localStorage.getItem(`${id}-likes`) || 0);
+      document.getElementById(`${id}-likes`).innerText = count;
+
+      viewArt(id); // Увеличиваем просмотры
+    });
+  };
+</script>
 
 </body>
 </html>
