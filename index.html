@@ -10,35 +10,20 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      transition: all 0.3s ease;
     }
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    :root.dark {
-      --bg: #1a1a1a;
-      --text: #fff;
-      --card-bg: #262626;
-      --accent: #ff4d4d;
-    }
-
-    :root.light {
-      --bg: #f5f5f5;
-      --text: #000;
-      --card-bg: #fff;
-      --accent: #cc0000;
+      background-color: #1a1a1a;
+      color: #fff;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(90deg, var(--accent), #e60000);
+      background: linear-gradient(90deg, #ff4d4d, #e60000);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
-      position: relative;
     }
 
     header h1 {
@@ -51,19 +36,6 @@
       opacity: 0.9;
     }
 
-    .theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
     nav {
       background: #222;
       padding: 1rem;
@@ -71,7 +43,7 @@
     }
 
     nav a {
-      color: var(--accent);
+      color: #ff4d4d;
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
@@ -87,25 +59,23 @@
       padding: 0 1rem;
     }
 
-    .news-cards, .gallery-images {
+    .news-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
     .card {
-      background-color: var(--card-bg);
+      background-color: #262626;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeInUp 0.6s forwards;
+      transition: transform 0.3s ease;
     }
 
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
     .card img {
       width: 100%;
@@ -119,7 +89,7 @@
 
     .card-content h3 {
       margin-bottom: 0.5rem;
-      color: var(--accent);
+      color: #ff4d4d;
     }
 
     .card-content p {
@@ -134,7 +104,13 @@
 
     .gallery h2 {
       margin-bottom: 1.5rem;
-      color: var(--accent);
+      color: #ff4d4d;
+    }
+
+    .gallery-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
     }
 
     .gallery-images img {
@@ -142,53 +118,6 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      transform: scale(0.9);
-      opacity: 0;
-      animation: fadeInScale 0.6s forwards;
-    }
-
-    .gallery-images img:nth-child(1) { animation-delay: 0.1s; }
-    .gallery-images img:nth-child(2) { animation-delay: 0.2s; }
-    .gallery-images img:nth-child(3) { animation-delay: 0.3s; }
-    .gallery-images img:nth-child(4) { animation-delay: 0.4s; }
-
-    .contact-form {
-      background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      margin-top: 3rem;
-      animation: fadeInUp 0.6s forwards;
-    }
-
-    .contact-form h2 {
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .contact-form button {
-      background: var(--accent);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .contact-form button:hover {
-      background: #cc0000;
     }
 
     footer {
@@ -199,26 +128,9 @@
       font-size: 0.9rem;
       color: #888;
     }
-
-    @keyframes fadeInUp {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeInScale {
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
-<body class="dark">
-
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" onclick="toggleTheme()">Светлая тема</button>
+<body>
 
   <!-- Header -->
   <header>
@@ -231,7 +143,7 @@
     <a href="#">Главная</a>
     <a href="#">Новости</a>
     <a href="#">Галерея</a>
-    <a href="#">Контакты</a>
+    <a href="#">Скачать</a>
   </nav>
 
   <!-- Main Content -->
@@ -239,8 +151,9 @@
 
     <!-- News Section -->
     <section>
-      <h2 style="color:var(--accent); margin-bottom:1.5rem;">Последние новости</h2>
+      <h2 style="color:#ff4d4d; margin-bottom:1.5rem;">Последние новости</h2>
       <div class="news-cards">
+
         <div class="card">
           <img src="https://picsum.photos/id/1018/600/400 " alt="Обновление 2.1" />
           <div class="card-content">
@@ -264,6 +177,7 @@
             <p>Играйте в ограниченный период времени и получайте уникальные награды за победы!</p>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -278,17 +192,6 @@
       </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="contact-form">
-      <h2>Свяжитесь с нами</h2>
-      <form onsubmit="submitForm(event)">
-        <input type="text" placeholder="Ваше имя" required />
-        <input type="email" placeholder="Email" required />
-        <textarea rows="5" placeholder="Сообщение"></textarea>
-        <button type="submit">Отправить</button>
-      </form>
-    </section>
-
   </main>
 
   <!-- Footer -->
@@ -296,31 +199,6 @@
     &copy; 2025 Car Crusher 2. Все права защищены.<br/>
     Создано фан-сообществом. Не является официальным сайтом Roblox.
   </footer>
-
-  <!-- Script -->
-  <script>
-    const themeBtn = document.querySelector('.theme-toggle');
-    let isDark = true;
-
-    function toggleTheme() {
-      if (isDark) {
-        document.body.classList.remove('dark');
-        document.body.classList.add('light');
-        themeBtn.textContent = 'Тёмкая тема';
-        isDark = false;
-      } else {
-        document.body.classList.remove('light');
-        document.body.classList.add('dark');
-        themeBtn.textContent = 'Светлая тема';
-        isDark = true;
-      }
-    }
-
-    function submitForm(e) {
-      e.preventDefault();
-      alert("Спасибо за сообщение! Мы свяжемся с вами.");
-    }
-  </script>
 
 </body>
 </html>
