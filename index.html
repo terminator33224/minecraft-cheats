@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roblox Car Art — Обновы</title>
+  <title>Car Crushers 2 — Обновление</title>
   <style>
     * {
       margin: 0;
@@ -12,10 +12,10 @@
     }
 
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+      color: #f0f0f0;
+      line-height: 1.6;
     }
 
     header {
@@ -24,7 +24,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('images/banner.jpg') no-repeat center center/cover;
+      background: url('images/banner.jpg') no-repeat center center/cover;
       color: white;
       padding: 0 20px;
     }
@@ -59,7 +59,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
       padding: 60px 20px;
     }
@@ -68,62 +68,23 @@
       margin-bottom: 60px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    ul.changelog {
+      list-style: none;
+      padding-left: 0;
     }
 
-    .art-card {
-      overflow: hidden;
-      border-radius: 10px;
-      background: #1a1a1a;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .art-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 20px rgba(0,255,255,0.3);
-    }
-
-    .art-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: filter 0.3s ease;
-    }
-
-    .art-card:hover img {
-      filter: brightness(1.1);
-    }
-
-    .caption {
+    ul.changelog li {
+      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 10px;
       padding: 15px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .stats {
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      color: #aaa;
-    }
-
-    .like-btn {
-      background: none;
-      border: none;
-      color: #ff4d4d;
-      cursor: pointer;
-      font-weight: bold;
+      border-radius: 8px;
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
       background: #111;
-      color: #666;
+      color: #aaa;
       font-size: 0.9rem;
     }
 
@@ -142,112 +103,51 @@
 <body>
 
 <nav>
-  <a href="#about">О сайте</a>
-  <a href="#gallery">Галерея</a>
+  <a href="#about">О обновлении</a>
+  <a href="#changelog">Что нового</a>
   <a href="#contact">Контакты</a>
 </nav>
 
 <header>
-  <h1>🎨 Roblox update Car Crushers 2</h1>
+  <h1>🚗 Car Crushers 2 — Обновление 2025</h1>
 </header>
 
 <div class="container">
 
   <section id="about">
-    <h2 style="margin-bottom: 15px;">👋 О сайте</h2>
-    <p>Это сайт обнавлений и концептов автомобилей из игры Roblox Car Crushers 2.</p>
+    <h2 style="margin-bottom: 15px;">🆕 О обновлении</h2>
+    <p>Последнее обновление Car Crushers 2 добавляет новые автомобили, режимы и улучшения!</p>
+    <p>Обновление включает:</p>
+    <ul>
+      <li>Новый режим игры</li>
+      <li>Изменённые текстуры и модели</li>
+      <li>Улучшенную физику и звуковое оформление</li>
+    </ul>
   </section>
 
-  <section id="gallery">
-    <h2 style="margin-bottom: 15px;">🖼️ Обновы</h2>
-    <div class="gallery">
-
-      <!-- Обнавление 1 -->
-      <div class="art-card">
-        <img src="images/art1.jpg">
-        <div class="caption">
-          <h3>🚗 Тюнингованная полицейская машина</h3>
-          <p>Этот арт был создан на основе классической полицейской машины Roblox с добавлением неоновой подсветки, спойлеров и новых дисков.</p>
-          <a href="https://www.roblox.com/ " target="_blank" style="color: #00ffff; text-decoration: none; font-weight: bold;">Смотреть оригинал</a>
-          <div class="stats" id="art1-stats">
-            <button class="like-btn" onclick="likeArt('art1')">❤️ Нравится (<span id="art1-likes">0</span>)</button>
-            <span>Просмотры: <span id="art1-views">0</span></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Второй арт -->
-      <div class="art-card">
-        <img src="images/art2.jpg" alt="Car Art 2">
-        <div class="caption">Ретро-кабриолет с неоновой подсветкой</div>
-        <div class="stats" id="art2-stats">
-          <button class="like-btn" onclick="likeArt('art2')">❤️ Нравится (<span id="art2-likes">0</span>)</button>
-          <span>Просмотры: <span id="art2-views">0</span></span>
-        </div>
-      </div>
-
-      <!-- Третий арт -->
-      <div class="art-card">
-        <img src="images/art3.jpg" alt="Car Art 3">
-        <div class="caption">Дрифтующий автомобиль на закате</div>
-        <div class="stats" id="art3-stats">
-          <button class="like-btn" onclick="likeArt('art3')">❤️ Нравится (<span id="art3-likes">0</span>)</button>
-          <span>Просмотры: <span id="art3-views">0</span></span>
-        </div>
-      </div>
-
-      <!-- Четвёртый арт -->
-      <div class="art-card">
-        <img src="images/art4.jpg" alt="Car Art 4">
-        <div class="caption">Мини-кар с уникальным дизайном</div>
-        <div class="stats" id="art4-stats">
-          <button class="like-btn" onclick="likeArt('art4')">❤️ Нравится (<span id="art4-likes">0</span>)</button>
-          <span>Просмотры: <span id="art4-views">0</span></span>
-        </div>
-      </div>
-
-    </div>
+  <section id="changelog">
+    <h2 style="margin-bottom: 15px;">📝 Что нового?</h2>
+    <ul class="changelog">
+      <li><strong>Добавлено:</strong> 5 новых автомобилей</li>
+      <li><strong>Добавлено:</strong> Режим "Выживание"</li>
+      <li><strong>Исправлено:</strong> Баг с зависанием при старте</li>
+      <li><strong>Улучшено:</strong> Графика и физика</li>
+      <li><strong>Добавлены:</strong> Новые звуки и музыка</li>
+    </ul>
   </section>
 
   <section id="contact">
     <h2 style="margin-bottom: 15px;">📩 Контакты</h2>
     <p>Telegram: <a href="https://t.me/ANDREY33224 ">@ANDREY33224</a></p>
-    
+    <p>Если есть вопросы или предложения — пишите!</p>
+  </section>
+
 </div>
 
 <footer>
-  <p>© 2025 Roblox Car Art. Все права защищены.</p>
-  <p><a href="#">Политика конфиденциальности</a></p>
+  <p>© 2025 Car Crushers 2. Все права защищены.</p>
+  <p><a href="#">Политика конфиденциальности</a> | <a href="#">Правила использования</a></p>
 </footer>
-
-<script>
-  // Функция для увеличения лайков
-  function likeArt(id) {
-    let likes = parseInt(localStorage.getItem(`${id}-likes`) || 0;
-    likes++;
-    localStorage.setItem(`${id}-likes`, likes);
-    document.getElementById(`${id}-likes`).innerText = likes;
-  }
-
-  // Функция для подсчёта просмотров
-  function viewArt(id) {
-    let views = parseInt(localStorage.getItem(`${id}-views`) || 0;
-    views++;
-    localStorage.setItem(`${id}-views`, views);
-    document.getElementById(`${id}-views`).innerText = views;
-  }
-
-  // Запускаем подсчёт просмотров при загрузке страницы
-  window.onload = function () {
-    const artIds = ['art1', 'art2', 'art3', 'art4'];
-    artIds.forEach(id => {
-      const count = parseInt(localStorage.getItem(`${id}-likes`) || 0);
-      document.getElementById(`${id}-likes`).innerText = count;
-
-      viewArt(id); // Увеличиваем просмотры
-    });
-  };
-</script>
 
 </body>
 </html>
