@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Car Crushers 2 — Обновление</title>
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -12,13 +13,14 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f0f0f;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #0d0d0f;
       color: #f5f5f5;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
 
+    /* Шапка сайта */
     header {
       height: 100vh;
       display: flex;
@@ -26,7 +28,6 @@
       justify-content: center;
       text-align: center;
       background: url('images/banner.jpg') no-repeat center center/cover;
-      color: white;
       position: relative;
     }
 
@@ -35,34 +36,36 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
       z-index: 0;
     }
 
-    header .text {
+    .header-text {
       position: relative;
       z-index: 1;
       max-width: 700px;
       padding: 0 20px;
     }
 
-    header h1 {
+    .header-text h1 {
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 15px;
+      color: #ffffff;
     }
 
-    header p {
-      font-size: 1.2rem;
+    .header-text p {
+      font-size: 1.1rem;
       color: #ccc;
     }
 
+    /* Навигация */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(14, 14, 16, 0.95);
+      background: rgba(13, 13, 15, 0.95);
       padding: 15px 20px;
       z-index: 1000;
       text-align: center;
@@ -80,12 +83,14 @@
       color: #fff;
     }
 
+    /* Основной контейнер */
     .container {
       max-width: 800px;
       margin: auto;
       padding: 60px 20px;
     }
 
+    /* Анимация появления секций */
     section {
       opacity: 0;
       transform: translateY(30px);
@@ -106,6 +111,7 @@
 
     p {
       margin-bottom: 15px;
+      color: #ddd;
     }
 
     ul.changelog {
@@ -135,12 +141,12 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
+      .header-text h1 {
         font-size: 2rem;
       }
 
-      header p {
-        font-size: 1rem;
+      .header-text p {
+        font-size: 0.95rem;
       }
 
       h2 {
@@ -158,9 +164,9 @@
 </nav>
 
 <header>
-  <div class="text">
+  <div class="header-text">
     <h1>🚗 Car Crushers 2 — Обновление 75</h1>
-    <p>Новое обновление добавляет нам.</p>
+    <p>Новое обновление добавляет.</p>
   </div>
 </header>
 
