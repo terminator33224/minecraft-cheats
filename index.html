@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition: all 0.3s ease;
     }
 
     body {
@@ -17,23 +18,94 @@
       background-color: #1a1a1a;
       color: #fff;
       line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    :root.dark {
+      --bg: #1a1a1a;
+      --card-bg: #262626;
+      --text: #fff;
+      --accent: #ff4d4d;
+      --border: #333;
+    }
+
+    :root.light {
+      --bg: #f5f5f5;
+      --card-bg: #fff;
+      --text: #000;
+      --accent: #cc0000;
+      --border: #ddd;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: slideUp 0.6s forwards;
+    }
+
+    .zoom {
+      opacity: 0;
+      animation: zoomIn 0.6s forwards;
     }
 
     header {
-      background: linear-gradient(90deg, #ff4d4d, #e60000);
+      background: linear-gradient(135deg, #ff4d4d, #e60000);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
     }
 
     header p {
       font-size: 1.1rem;
       opacity: 0.9;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     nav {
@@ -43,14 +115,27 @@
     }
 
     nav a {
-      color: #ff4d4d;
+      color: var(--accent);
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
+      position: relative;
+      display: inline-block;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .container {
@@ -66,30 +151,41 @@
     }
 
     .card {
-      background-color: #262626;
-      border-radius: 10px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 0.6s forwards;
     }
 
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(255,77,77,0.4);
     }
 
     .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
     }
 
     .card-content {
-      padding: 1rem;
+      padding: 1.5rem;
     }
 
     .card-content h3 {
       margin-bottom: 0.5rem;
-      color: #ff4d4d;
+      color: var(--accent);
     }
 
     .card-content p {
@@ -104,7 +200,7 @@
 
     .gallery h2 {
       margin-bottom: 1.5rem;
-      color: #ff4d4d;
+      color: var(--accent);
     }
 
     .gallery-images {
@@ -118,6 +214,12 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255,77,77,0.4);
     }
 
     footer {
@@ -127,15 +229,20 @@
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #888;
+      animation: slideUp 0.6s forwards;
+      animation-delay: 0.8s;
     }
   </style>
 </head>
-<body>
+<body class="dark fade-in">
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">Светлая тема</button>
 
   <!-- Header -->
   <header>
-    <h1>🏎️ Car Crusher 2</h1>
-    <p>Официальный блог | Новости | Обновления</p>
+    <h1 class="zoom">🏎️ Car Crusher 2</h1>
+    <p class="zoom">Официальный блог | Новости | Обновления</p>
   </header>
 
   <!-- Navigation -->
@@ -150,10 +257,9 @@
   <main class="container">
 
     <!-- News Section -->
-    <section>
-      <h2 style="color:#ff4d4d; margin-bottom:1.5rem;">Последние новости</h2>
+    <section class="fade-in">
+      <h2 style="color:var(--accent); margin-bottom:1.5rem;">Последние новости</h2>
       <div class="news-cards">
-
         <div class="card">
           <img src="https://picsum.photos/id/1018/600/400 " alt="Обновление 2.1" />
           <div class="card-content">
@@ -177,12 +283,11 @@
             <p>Играйте в ограниченный период времени и получайте уникальные награды за победы!</p>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery">
+    <section class="gallery fade-in">
       <h2>Галерея</h2>
       <div class="gallery-images">
         <img src="https://picsum.photos/id/1021/600/400 " alt="Скриншот 1" />
@@ -200,5 +305,23 @@
     Создано фан-сообществом. Не является официальным сайтом Roblox.
   </footer>
 
+  <script>
+    const themeBtn = document.querySelector('.theme-toggle');
+    let isDark = true;
+
+    function toggleTheme() {
+      if (isDark) {
+        document.body.classList.remove('dark');
+        document.body.classList.add('light');
+        themeBtn.textContent = 'Тёмкая тема';
+        isDark = false;
+      } else {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+        themeBtn.textContent = 'Светлая тема';
+        isDark = true;
+      }
+    }
+  </script>
 </body>
 </html>
