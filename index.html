@@ -12,10 +12,11 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #1a1a2e, #16213e);
-      color: #f0f0f0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #0e0e10;
+      color: #f5f5f5;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -26,13 +27,34 @@
       text-align: center;
       background: url('images/banner.jpg') no-repeat center center/cover;
       color: white;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    header .text {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
       padding: 0 20px;
     }
 
     header h1 {
       font-size: 3rem;
       font-weight: bold;
-      text-shadow: 0 4px 8px rgba(0,0,0,0.7);
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
     }
 
     nav {
@@ -40,114 +62,4 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(15, 15, 15, 0.95);
-      padding: 15px 20px;
-      z-index: 1000;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00ffff;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    ul.changelog {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul.changelog li {
-      background: rgba(255, 255, 255, 0.05);
-      margin-bottom: 10px;
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #111;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="#about">О обновлении</a>
-  <a href="#changelog">Что нового</a>
-  <a href="#contact">Контакты</a>
-</nav>
-
-<header>
-  <h1>🚗 Car Crushers 2 — Обновление 2025</h1>
-</header>
-
-<div class="container">
-
-  <section id="about">
-    <h2 style="margin-bottom: 15px;">🆕 О обновлении</h2>
-    <p>Последнее обновление Car Crushers 2 добавляет новые автомобили, режимы и улучшения!</p>
-    <p>Обновление включает:</p>
-    <ul>
-      <li>Новый режим игры</li>
-      <li>Изменённые текстуры и модели</li>
-      <li>Улучшенную физику и звуковое оформление</li>
-    </ul>
-  </section>
-
-  <section id="changelog">
-    <h2 style="margin-bottom: 15px;">📝 Что нового?</h2>
-    <ul class="changelog">
-      <li><strong>Добавлено:</strong> 5 новых автомобилей</li>
-      <li><strong>Добавлено:</strong> Режим "Выживание"</li>
-      <li><strong>Исправлено:</strong> Баг с зависанием при старте</li>
-      <li><strong>Улучшено:</strong> Графика и физика</li>
-      <li><strong>Добавлены:</strong> Новые звуки и музыка</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2 style="margin-bottom: 15px;">📩 Контакты</h2>
-    <p>Telegram: <a href="https://t.me/ANDREY33224 ">@ANDREY33224</a></p>
-    <p>Если есть вопросы или предложения — пишите!</p>
-  </section>
-
-</div>
-
-<footer>
-  <p>© 2025 Car Crushers 2. Все права защищены.</p>
-  <p><a href="#">Политика конфиденциальности</a> | <a href="#">Правила использования</a></p>
-</footer>
-
-</body>
-</html>
+      background: rgba(14, 14, 16, 0.9
