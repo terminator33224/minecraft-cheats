@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minecraft Читы | 2025</title>
+  <title>Roblox Car Art — Арты про машины</title>
   <style>
-    /* Основные настройки */
     * {
       margin: 0;
       padding: 0;
@@ -13,14 +12,14 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
+      font-family: 'Segoe UI', sans-serif;
+      background: #1a1a2e;
       color: #f0f0f0;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
     }
@@ -31,14 +30,13 @@
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: #00c9a7;
-      margin-bottom: 10px;
+      font-size: 2.8rem;
+      color: #0f3460;
     }
 
     header p {
       font-size: 1.1rem;
-      color: #aaa;
+      color: #a0a0c5;
     }
 
     nav {
@@ -48,9 +46,9 @@
 
     nav a {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 15px;
       text-decoration: none;
-      color: #00c9a7;
+      color: #e0b1fb;
       font-weight: bold;
       transition: color 0.3s ease;
     }
@@ -59,64 +57,52 @@
       color: #fff;
     }
 
-    .cheat {
-      background: rgba(255, 255, 255, 0.05);
-      border-left: 5px solid #00c9a7;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      transition: transform 0.2s ease;
+    section {
+      margin-bottom: 60px;
     }
 
-    .cheat:hover {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .art-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .art-card:hover {
       transform: translateY(-5px);
       background: rgba(255, 255, 255, 0.1);
     }
 
-    .cheat h2 {
-      color: #ffffff;
-      margin-top: 0;
+    .art-card img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .download-btn {
-      display: inline-block;
-      margin-top: 10px;
-      background: #00c9a7;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background: #00a88a;
-    }
-
-    section#howto ol {
-      padding-left: 20px;
-      margin-top: 20px;
+    .art-card .caption {
+      padding: 15px;
+      font-size: 0.95rem;
     }
 
     footer {
       text-align: center;
       margin-top: 60px;
       font-size: 0.9rem;
-      color: #bbb;
+      color: #aaa;
     }
 
     footer a {
-      color: #00c9a7;
+      color: #e0b1fb;
       text-decoration: none;
     }
 
-    /* Мобильная адаптация */
     @media (max-width: 600px) {
-      .container {
-        padding: 20px 10px;
-      }
-
       nav {
         display: flex;
         flex-direction: column;
@@ -124,11 +110,7 @@
       }
 
       nav a {
-        margin: 5px 0;
-      }
-
-      header h1 {
-        font-size: 2rem;
+        margin: 10px 0;
       }
     }
   </style>
@@ -138,58 +120,63 @@
 <div class="container">
 
   <header>
-    <h1>🟢 Minecraft Читы 2025</h1>
-    <p>Лучшие читы и моды для Java Edition. Используйте на свой страх и риск!</p>
+    <h1>🎨 Roblox Car Art</h1>
+    <p>Арты, дизайн и модели автомобилей из игры Roblox</p>
   </header>
 
   <nav>
-    <a href="#">Главная</a>
-    <a href="#cheats">Читы</a>
-    <a href="#howto">Как использовать</a>
+    <a href="#about">О сайте</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#process">Процесс работы</a>
     <a href="#contact">Контакты</a>
   </nav>
 
-  <section id="cheats">
-    <div class="cheat">
-      <h2>Hypixel Aimbot</h2>
-      <p><strong>Описание:</strong> Автоматическое прицеливание в PvP.</p>
-      <p><strong>Поддержка версий:</strong> 1.16–1.20.4</p>
-      <a href="files/aimbot.jar" download class="download-btn">📥 Скачать чит</a>
-    </div>
+  <section id="about">
+    <h2>👋 О сайте</h2>
+    <p>Это сайт посвящён артам и дизайну автомобилей из популярной игры Roblox. Здесь вы найдёте рендеры, скетчи, концепты и другие творческие работы.</p>
+  </section>
 
-    <div class="cheat">
-      <h2>X-Ray Mod</h2>
-      <p><strong>Описание:</strong> Вид сквозь блоки. Полезен для добычи ресурсов.</p>
-      <p><strong>Поддержка версий:</strong> 1.19–1.20.4</p>
-      <a href="files/xray.zip" download class="download-btn">📥 Скачать чит</a>
-    </div>
-
-    <div class="cheat">
-      <h2>NoFall</h2>
-      <p><strong>Описание:</strong> Не получает урон от падения с высоты.</p>
-      <p><strong>Поддержка версий:</strong> 1.18–1.20.4</p>
-      <a href="files/nofall.jar" download class="download-btn">📥 Скачать чит</a>
+  <section id="gallery">
+    <h2>🖼️ Галерея артов</h2>
+    <div class="gallery">
+      <div class="art-card">
+        <img src="images/art1.jpg" alt="Car Art 1">
+        <div class="caption">Тюнингованная полицейская машина</div>
+      </div>
+      <div class="art-card">
+        <img src="images/art2.jpg" alt="Car Art 2">
+        <div class="caption">Ретро-кабриолет с неоновой подсветкой</div>
+      </div>
+      <div class="art-card">
+        <img src="images/art3.jpg" alt="Car Art 3">
+        <div class="caption">Дрифтующий автомобиль на закате</div>
+      </div>
+      <div class="art-card">
+        <img src="images/art4.jpg" alt="Car Art 4">
+        <div class="caption">Мини-кар с уникальным дизайном</div>
+      </div>
     </div>
   </section>
 
-  <section id="howto">
-    <h2>🛠 Как использовать читы?</h2>
+  <section id="process">
+    <h2>🛠 Как я создаю арты?</h2>
     <ol>
-      <li>Скачайте нужный чит по ссылке</li>
-      <li>Установите/замените файлы в папке `.minecraft`</li>
-      <li>Перезапустите лаунчер</li>
-      <li>Выберите профиль с модами и войдите в игру</li>
+      <li>Выбираю тему (например, "спортивный автомобиль")</li>
+      <li>Рисую эскиз в программе (Blender / Photoshop / Procreate)</li>
+      <li>Добавляю текстуры, свет и эффекты</li>
+      <li>Публикую результат здесь</li>
     </ol>
   </section>
 
   <section id="contact">
     <h2>📩 Контакты</h2>
     <p>Telegram: <a href="https://t.me/yourusername ">@yourusername</a></p>
-    <p>Если есть предложения или проблемы — пишите в Telegram.</p>
+    <p>Instagram: <a href="https://instagram.com/yourprofile ">@yourprofile</a></p>
+    <p>Если хочешь заказать арт или просто пообщаться — пишите!</p>
   </section>
 
   <footer>
-    <p>© 2025 Minecraft Читы. Использование материалов на свой риск.</p>
+    <p>© 2025 Roblox Car Art. Все права защищены.</p>
     <p><a href="#">Политика конфиденциальности</a></p>
   </footer>
 
