@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roblox Car Art — Арты про машины</title>
+  <title>Roblox Car Art — Галерея</title>
   <style>
     * {
       margin: 0;
@@ -12,49 +12,56 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #1a1a2e;
-      color: #f0f0f0;
-      line-height: 1.6;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('images/banner.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 15, 15, 0.95);
+      padding: 15px 20px;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffff;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: #0f3460;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #a0a0c5;
-    }
-
-    nav {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 0 15px;
-      text-decoration: none;
-      color: #e0b1fb;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #fff;
+      padding: 60px 20px;
     }
 
     section {
@@ -63,81 +70,80 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
     .art-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      border-radius: 10px;
+      background: #1a1a1a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .art-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,255,255,0.3);
     }
 
     .art-card img {
       width: 100%;
       height: auto;
       display: block;
+      transition: filter 0.3s ease;
+    }
+
+    .art-card:hover img {
+      filter: brightness(1.1);
     }
 
     .art-card .caption {
       padding: 15px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      color: #ccc;
     }
 
     footer {
       text-align: center;
-      margin-top: 60px;
+      padding: 30px 20px;
+      background: #111;
+      color: #666;
       font-size: 0.9rem;
-      color: #aaa;
     }
 
     footer a {
-      color: #e0b1fb;
+      color: #00ffff;
       text-decoration: none;
     }
 
     @media (max-width: 600px) {
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        margin: 10px 0;
+      header h1 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <a href="#about">О сайте</a>
+  <a href="#gallery">Галерея</a>
+  <a href="#contact">Контакты</a>
+</nav>
+
+<header>
+  <h1>🎨 Roblox Car Art</h1>
+</header>
+
 <div class="container">
 
-  <header>
-    <h1>🎨 Roblox Car Art</h1>
-    <p>Арты, дизайн и модели автомобилей из игры Roblox</p>
-  </header>
-
-  <nav>
-    <a href="#about">О сайте</a>
-    <a href="#gallery">Галерея</a>
-    <a href="#process">Процесс работы</a>
-    <a href="#contact">Контакты</a>
-  </nav>
-
   <section id="about">
-    <h2>👋 О сайте</h2>
-    <p>Это сайт посвящён артам и дизайну автомобилей из популярной игры Roblox. Здесь вы найдёте рендеры, скетчи, концепты и другие творческие работы.</p>
+    <h2 style="margin-bottom: 15px;">👋 О сайте</h2>
+    <p>Это галерея артов и концептов автомобилей из игры Roblox. Здесь собраны работы художников, создающих уникальные модели машин.</p>
   </section>
 
   <section id="gallery">
-    <h2>🖼️ Галерея артов</h2>
+    <h2 style="margin-bottom: 15px;">🖼️ Галерея</h2>
     <div class="gallery">
       <div class="art-card">
         <img src="images/art1.jpg" alt="Car Art 1">
@@ -158,18 +164,18 @@
     </div>
   </section>
 
-
+  
   <section id="contact">
-    <h2>📩 Контакты</h2>
+    <h2 style="margin-bottom: 15px;">📩 Контакты</h2>
     <p>Telegram: <a href="https://t.me/ANDREY33224 ">@ANDREY33224</a></p>
     
 
-  <footer>
-    <p>© 2025 Roblox Car Art. Все права защищены.</p>
-    <p><a href="#">Политика конфиденциальности</a></p>
-  </footer>
-
 </div>
+
+<footer>
+  <p>© 2025 Roblox Car Art. Все права защищены.</p>
+  <p><a href="#">Политика конфиденциальности</a></p>
+</footer>
 
 </body>
 </html>
