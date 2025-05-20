@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Car Crushers 2 News</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto :wght@400;700&display=swap" rel="stylesheet">
-  <!-- AOS Animation CSS -->
-  <link href="https://unpkg.com/aos @2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Car Crushers 2 — Обновление</title>
   <style>
     /* Reset */
     * {
@@ -16,237 +13,218 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #0d0d0f;
+      color: #f5f5f5;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    /* Header */
-    .header {
+    /* Шапка сайта */
+    header {
+      height: 100vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background-color: #111;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      justify-content: center;
+      text-align: center;
+      background: url('images/banner.jpg') no-repeat center center/cover;
+      position: relative;
     }
 
-    .logo {
-      font-size: 1.5rem;
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+      z-index: 0;
+    }
+
+    .header-text {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 0 20px;
+    }
+
+    .header-text h1 {
+      font-size: 3rem;
       font-weight: bold;
+      margin-bottom: 15px;
+      color: #ffffff;
     }
 
-    .nav a {
-      color: white;
-      margin-left: 1.5rem;
+    .header-text p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* Навигация */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(13, 13, 15, 0.95);
+      padding: 15px 20px;
+      z-index: 1000;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+
+    nav a {
+      color: #aaa;
+      margin: 0 15px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
-    .nav a:hover {
-      color: #f39c12;
+    nav a:hover {
+      color: #fff;
     }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(120deg, #e63946, #1d3557);
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
+    /* Основной контейнер */
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    /* Анимация появления секций */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      margin-bottom: 60px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* News Section */
-    .news-section {
-      padding: 3rem 2rem;
-      background-color: #fff;
-    }
-
-    .news-section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
+    h2 {
       font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffffff;
     }
 
-    .news-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+    p {
+      margin-bottom: 15px;
+      color: #ddd;
     }
 
-    .card {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 300px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
+    ul.changelog {
+      list-style: none;
+      padding-left: 0;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    ul.changelog li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-left: 4px solid #00c9a7;
     }
 
-    .card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .card h3 {
-      padding: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      padding: 0 1rem 1rem;
-      font-size: 0.95rem;
-    }
-
-    /* About Section */
-    .about-section {
-      background-color: #f9f9f9;
-      padding: 3rem 2rem;
+    footer {
       text-align: center;
-    }
-
-    .about-section h2 {
-      margin-bottom: 1rem;
-    }
-
-    /* Contact Section */
-    .contact-section {
-      background-color: #ffffff;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .email-link {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #e63946;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    .email-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 1.5rem;
+      padding: 30px 20px;
       background-color: #111;
-      color: #ccc;
       font-size: 0.9rem;
+      color: #888;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
+    footer a {
+      color: #00c9a7;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .header-text h1 {
+        font-size: 2rem;
       }
 
-      .news-cards {
-        flex-direction: column;
-        align-items: center;
+      .header-text p {
+        font-size: 0.95rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">🏎️ Car Crushers 2 News</div>
-    <nav class="nav">
-      <a href="#news">Новости</a>
-      <a href="#about">Об игре</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-  </header>
+<nav>
+  <a href="#about">О обновлении</a>
+  <a href="#changelog">Что нового</a>
+  <a href="#contact">Контакты</a>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Следите за последними новостями Car Crushers 2</h1>
-    <p>Патчи, обновления, события и анонсы — всё в одном месте!</p>
+<header>
+  <div class="header-text">
+    <h1>🚗 Car Crushers 2 — Обновление 2025</h1>
+    <p>Новое обновление добавляет новые автомобили, режимы и улучшения.</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <section id="about">
+    <h2>🆕 О обновлении</h2>
+    <p>Обновление 2025 года принесёт игрокам свежие изменения, новые функции и улучшенный игровой процесс.</p>
+    <p>Теперь вы сможете:</p>
+    <ul>
+      <li>Играть в новом режиме "Выживание"</li>
+      <li>Использовать уникальные текстуры и скины</li>
+      <li>Участвовать в новых гонках и миссиях</li>
+    </ul>
   </section>
 
-  <!-- News Section -->
-  <section id="news" class="news-section">
-    <h2>Последние новости</h2>
-    <div class="news-cards" id="news-container">
-      <!-- Новости будут загружены сюда -->
-    </div>
+  <section id="changelog">
+    <h2>📝 Что нового?</h2>
+    <ul class="changelog">
+      <li><strong>Добавлено:</strong> 5 новых автомобилей</li>
+      <li><strong>Добавлено:</strong> Режим "Выживание"</li>
+      <li><strong>Исправлено:</strong> Баг с зависанием при старте</li>
+      <li><strong>Улучшено:</strong> Графика и физика</li>
+      <li><strong>Добавлены:</strong> Новые звуки и музыка</li>
+    </ul>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <h2>О Car Crushers 2</h2>
-    <p>
-      Car Crushers 2 — это динамичная игра от Roblox, где вы можете участвовать в гонках, разрушать машины,
-      строить свои собственные и исследовать открытый мир. Игра продолжает развиваться, добавляя новые функции
-      и улучшая игровой опыт.
-    </p>
+  <section id="contact">
+    <h2>📩 Контакты</h2>
+    <p>Telegram: <a href="https://t.me/yourusername ">@yourusername</a></p>
+    <p>Если есть вопросы или предложения — пишите!</p>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>Связь с нами</h2>
-    <p>Хотите предложить новость или сотрудничество?</p>
-    <a href="mailto:news@carcrushers2.com" class="email-link">📧 Написать нам</a>
-  </section>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Car Crushers 2 News | Все права защищены</p>
-  </footer>
+<footer>
+  <p>© 2025 Car Crushers 2. Все права защищены.</p>
+  <p><a href="#">Политика конфиденциальности</a> | <a href="#">Правила использования</a></p>
+</footer>
 
-  <!-- AOS Animation JS -->
-  <script src="https://unpkg.com/aos @2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("news-container");
+<script>
+  // Анимация появления секций при скролле
+  const sections = document.querySelectorAll("section");
 
-      // Тестовый API для получения постов
-      fetch("https://jsonplaceholder.typicode.com/posts ")
-        .then(response => response.json())
-        .then(posts => {
-          posts.slice(0, 3).forEach((post, index) => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.setAttribute("data-aos", "fade-up");
-            card.setAttribute("data-aos-delay", index * 200);
-            card.innerHTML = `
-              <img src="https://via.placeholder.com/300x150?text=News+ ${index + 1}" alt="Новость ${index + 1}" />
-              <h3>${post.title}</h3>
-              <p>${post.body.substring(0, 100)}...</p>
-            `;
-            container.appendChild(card);
-          });
-
-          AOS.init({ duration: 1000, once: true });
-        })
-        .catch(err => {
-          console.error("Ошибка загрузки новостей:", err);
-          container.innerHTML = "<p>Не удалось загрузить новости.</p>";
-        });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
     });
-  </script>
+  }, {
+    threshold: 0.2
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
