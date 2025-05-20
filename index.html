@@ -1,71 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Minecraft Читы | 2025</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+    /* Основные настройки */
+    * {
       margin: 0;
-      padding: 20px;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #f0f0f0;
+      line-height: 1.6;
     }
 
     .container {
       max-width: 800px;
       margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 40px 20px;
     }
 
-    h1 {
-      color: #27ae60;
+    header {
       text-align: center;
+      margin-bottom: 40px;
     }
 
-    h2 {
-      color: #2c3e50;
+    header h1 {
+      font-size: 2.5rem;
+      color: #00c9a7;
+      margin-bottom: 10px;
     }
 
-    .cheat {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-left: 5px solid #27ae60;
-      background: #ecf8ef;
-    }
-
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #777;
+    header p {
+      font-size: 1.1rem;
+      color: #aaa;
     }
 
     nav {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     nav a {
       display: inline-block;
-      margin: 5px 10px;
+      margin: 0 10px;
       text-decoration: none;
-      color: #27ae60;
+      color: #00c9a7;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
+    nav a:hover {
+      color: #fff;
+    }
+
+    .cheat {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 5px solid #00c9a7;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .cheat:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cheat h2 {
+      color: #ffffff;
+      margin-top: 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #00c9a7;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #00a88a;
+    }
+
+    section#howto ol {
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    footer a {
+      color: #00c9a7;
+      text-decoration: none;
+    }
+
+    /* Мобильная адаптация */
     @media (max-width: 600px) {
       .container {
-        padding: 15px;
+        padding: 20px 10px;
       }
 
       nav {
@@ -76,15 +125,10 @@
 
       nav a {
         margin: 5px 0;
-        font-size: 16px;
       }
 
-      h1 {
-        font-size: 24px;
-      }
-
-      .cheat {
-        padding: 10px;
+      header h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -93,6 +137,11 @@
 
 <div class="container">
 
+  <header>
+    <h1>🟢 Minecraft Читы 2025</h1>
+    <p>Лучшие читы и моды для Java Edition. Используйте на свой страх и риск!</p>
+  </header>
+
   <nav>
     <a href="#">Главная</a>
     <a href="#cheats">Читы</a>
@@ -100,29 +149,26 @@
     <a href="#contact">Контакты</a>
   </nav>
 
-  <h1>🟢 Minecraft Читы 2025</h1>
-  <p style="text-align:center;">Лучшие читы и моды для Java Edition. Используйте на свой страх и риск!</p>
-
   <section id="cheats">
     <div class="cheat">
       <h2>Hypixel Aimbot</h2>
       <p><strong>Описание:</strong> Автоматическое прицеливание в PvP.</p>
       <p><strong>Поддержка версий:</strong> 1.16–1.20.4</p>
-      <p><a href="#">📥 Скачать чит</a></p>
+      <a href="files/aimbot.jar" download class="download-btn">📥 Скачать чит</a>
     </div>
 
     <div class="cheat">
       <h2>X-Ray Mod</h2>
       <p><strong>Описание:</strong> Вид сквозь блоки. Полезен для добычи ресурсов.</p>
       <p><strong>Поддержка версий:</strong> 1.19–1.20.4</p>
-      <p><a href="#">📥 Скачать чит</a></p>
+      <a href="files/xray.zip" download class="download-btn">📥 Скачать чит</a>
     </div>
 
     <div class="cheat">
       <h2>NoFall</h2>
       <p><strong>Описание:</strong> Не получает урон от падения с высоты.</p>
       <p><strong>Поддержка версий:</strong> 1.18–1.20.4</p>
-      <p><a href="#">📥 Скачать чит</a></p>
+      <a href="files/nofall.jar" download class="download-btn">📥 Скачать чит</a>
     </div>
   </section>
 
@@ -138,7 +184,7 @@
 
   <section id="contact">
     <h2>📩 Контакты</h2>
-    <p>Telegram: <a href="https://t.me/yourusername">@yourusername</a></p>
+    <p>Telegram: <a href="https://t.me/yourusername ">@yourusername</a></p>
     <p>Если есть предложения или проблемы — пишите в Telegram.</p>
   </section>
 
